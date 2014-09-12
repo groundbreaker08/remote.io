@@ -1,0 +1,20 @@
+#Change proper settings for production environment
+#or for your dev't environment
+
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: postgres
+
+development:
+  <<: *default
+  database: remote-io-dev
+
+test:
+  <<: *default
+  database: remote-io-test
+
+production:
+  <<: *default
+  database: remote-io
